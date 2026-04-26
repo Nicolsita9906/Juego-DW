@@ -1,15 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Antic&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto+Condensed:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    background: #f6f4d2;
+}
+
 header {
     background: #a480cf;
     color: #f6f4d2;
     text-align: center;
-}
-body{
-    font-family: Pixelify Sans;
-    background: #f6f4d2;
+    padding: 16px;
 }
 
-#contenedor-juego{
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+#top-bar {
+    margin-bottom: 16px;
+}
+
+#top-bar select {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: 2px solid #a480cf;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+#palabra {
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+}
+
+#vidas {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* CONTENEDOR DOS COLUMNAS */
+#contenedor-juego {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -17,22 +60,55 @@ body{
     flex-wrap: wrap;
     margin-bottom: 24px;
 }
-/* CONTENEDOR HORCA */
+
+/* COLUMNA IMAGEN + PISTAS */
+#col-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#disney-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: blur(20px);
+    transition: filter 0.5s ease;
+}
+
+/* PISTAS */
+#pistas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 220px;
+}
+
+.pista {
+    background: #b5e48c;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* HORCA */
 #horca {
     position: relative;
     width: 220px;
     height: 300px;
-    margin: 20px auto;
+    flex-shrink: 0;
 }
 
-/* MADERA */
 .madera {
     position: absolute;
     background: linear-gradient(90deg, #8B5A2B, #A0522D);
     border-radius: 3px;
 }
 
-/* base */
 .base {
     width: 150px;
     height: 10px;
@@ -40,7 +116,6 @@ body{
     left: 20px;
 }
 
-/* poste */
 .poste {
     width: 10px;
     height: 250px;
@@ -48,7 +123,6 @@ body{
     left: 40px;
 }
 
-/* viga */
 .viga {
     width: 120px;
     height: 10px;
@@ -56,7 +130,6 @@ body{
     left: 40px;
 }
 
-/* cuerda */
 .cuerda {
     width: 4px;
     height: 30px;
@@ -84,7 +157,6 @@ body{
     animation: aparecer 0.3s ease;
 }
 
-/* cabeza */
 #cabeza {
     width: 40px;
     height: 40px;
@@ -93,7 +165,6 @@ body{
     left: 130px;
 }
 
-/* cuerpo */
 #cuerpo {
     width: 5px;
     height: 60px;
@@ -101,7 +172,6 @@ body{
     left: 148px;
 }
 
-/* brazos */
 #brazo-izq {
     width: 40px;
     height: 5px;
@@ -118,7 +188,6 @@ body{
     transform: rotate(30deg);
 }
 
-/* piernas */
 #pierna-izq {
     width: 40px;
     height: 5px;
@@ -135,29 +204,13 @@ body{
     transform: rotate(-30deg);
 }
 
-/* IMAGEN POKEMON */
-#disney-img {
-    width: 200px;
-    height: 200px;
-    filter: blur(20px);
-    transition: filter 0.5s ease;
-}
-
-/* PISTAS */
-#pistas-container {
+/* CONTROLES */
+#controles {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
-    margin-top: 20px;
-    width: 300px;
-    height: 200px;
-}
-
-.pista {
-    background: #b5e48c;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin-top: 8px;
 }
 
 #letra {
@@ -182,15 +235,20 @@ button {
     cursor: pointer;
     transition: background 0.2s;
 }
-/* ANIMACION */
+
+button:hover {
+    background: #8a5fb5;
+}
+
 @keyframes aparecer {
     from { opacity: 0; transform: scale(0.5); }
     to { opacity: 1; transform: scale(1); }
 }
 
-footer{
+footer {
     background: #a480cf;
     color: #f6f4d2;
     text-align: center;
     padding: 10px;
+    margin-top: 40px;
 }

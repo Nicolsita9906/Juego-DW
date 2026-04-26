@@ -74,7 +74,6 @@ function intentar() {
         vidas--;
         dibujarAhorcado();
         mostrarPista();
-        // ❌ ya NO revelamos imagen aquí
     }
 
     actualizarPantalla();
