@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Antic&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto+Condensed:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+header {
+    background: #a480cf;
+    color: #f6f4d2;
+    text-align: center;
+}
+body{
+    font-family: Pixelify Sans;
+    background: #f6f4d2;
+}
+
+div{
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+.temas{
+    display: flex;
+    justify-content: center;
+}
+
+.poke{
+    background: #ccdbfd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+    transition: 0.5s;
+}
+
+.disney{
+    background: #dd2d4a;
+    color: #faf0ca;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+    transition: 0.5s;
+}
+
+.planetas{
+    background: #b7b7a4;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+    transition: 0.5s;
+}
+
+.planetas:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.disney:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.poke:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+button{
+    border-radius: 10px;
+    width: 55px;
+    height: 35px;
+    font-size: 15px;
+    background: #99c24d;
+    transition: 0.5s;
+}
+
+button:hover{
+    background: #104911;
+    color: #f6f4d2;
+}
+
+
+footer{
+    background: #a480cf;
+    color: #f6f4d2;
+    text-align: center;
+    padding: 10px;
+}

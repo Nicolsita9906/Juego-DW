@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Antic&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto+Condensed:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+header {
+    background: #a480cf;
+    color: #f6f4d2;
+    text-align: center;
+}
+body{
+    font-family: Pixelify Sans;
+    background: #f6f4d2;
+}
+
+#contenedor-juego{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+/* CONTENEDOR HORCA */
+#horca {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+/* MADERA */
+.madera {
+    position: absolute;
+    background: linear-gradient(90deg, #8B5A2B, #A0522D);
+    border-radius: 3px;
+}
+
+/* base */
+.base {
+    width: 150px;
+    height: 10px;
+    bottom: 0;
+    left: 20px;
+}
+
+/* poste */
+.poste {
+    width: 10px;
+    height: 250px;
+    bottom: 0;
+    left: 40px;
+}
+
+/* viga */
+.viga {
+    width: 120px;
+    height: 10px;
+    top: 20px;
+    left: 40px;
+}
+
+/* cuerda */
+.cuerda {
+    width: 4px;
+    height: 30px;
+    top: 30px;
+    left: 150px;
+    background: #d2b48c;
+}
+
+.cuerda::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #d2b48c;
+    border-radius: 50%;
+    bottom: -5px;
+    left: -4px;
+}
+
+/* MUÑECO */
+.parte {
+    position: absolute;
+    display: none;
+    background: black;
+    animation: aparecer 0.3s ease;
+}
+
+/* cabeza */
+#cabeza {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 60px;
+    left: 130px;
+}
+
+/* cuerpo */
+#cuerpo {
+    width: 5px;
+    height: 60px;
+    top: 100px;
+    left: 148px;
+}
+
+/* brazos */
+#brazo-izq {
+    width: 40px;
+    height: 5px;
+    top: 120px;
+    left: 110px;
+    transform: rotate(-30deg);
+}
+
+#brazo-der {
+    width: 40px;
+    height: 5px;
+    top: 120px;
+    left: 150px;
+    transform: rotate(30deg);
+}
+
+/* piernas */
+#pierna-izq {
+    width: 40px;
+    height: 5px;
+    top: 160px;
+    left: 110px;
+    transform: rotate(30deg);
+}
+
+#pierna-der {
+    width: 40px;
+    height: 5px;
+    top: 160px;
+    left: 150px;
+    transform: rotate(-30deg);
+}
+
+/* IMAGEN POKEMON */
+#pokemon-img {
+    width: 200px;
+    height: 200px;
+    filter: blur(20px);
+    transition: filter 0.5s ease;
+}
+
+/* PISTAS */
+#pistas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    width: 300px;
+    height: 200px;
+}
+
+.pista {
+    background: #b5e48c;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+#letra {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    width: 80px;
+    border: 2px solid #a480cf;
+    border-radius: 8px;
+    text-align: center;
+    background: #fff;
+}
+
+button {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    background: #a480cf;
+    color: #f6f4d2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+/* ANIMACION */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+footer{
+    background: #a480cf;
+    color: #f6f4d2;
+    text-align: center;
+    padding: 10px;
+}

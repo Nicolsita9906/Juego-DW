@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="../css/poke-style.css">
+
+</head>
+<body>
+
+<header>
+    <h1>Mini juegos NV</h1>
+    <h3>!ADIVINA EL POKÉMON¡</h3>
+</header>
+<br>
+<br>
+
+<h2 id="palabra"></h2>
+<p id="vidas"></p>
+
+<input type="text" id="letra" maxlength="1" placeholder="Letra...">
+<button onclick="intentar()">Intentar</button>
+
+<div id="contenedor-juego">
+    <div id="pistas-container"></div>  <!-- ← agregar esto -->
+
+    <img id="pokemon-img">
+    <div id="horca">
+        <!-- estructura de madera -->
+        <div class="madera base"></div>
+        <div class="madera poste"></div>
+        <div class="madera viga"></div>
+        <div class="madera cuerda"></div>
+
+        <!-- muñeco -->
+        <div class="parte" id="cabeza"></div>
+        <div class="parte" id="cuerpo"></div>
+        <div class="parte" id="brazo-izq"></div>
+        <div class="parte" id="brazo-der"></div>
+        <div class="parte" id="pierna-izq"></div>
+        <div class="parte" id="pierna-der"></div>
+    </div>
+</div>
+<br>
+<br>
+<footer>
+    <h3>Mini juegos NV</h3>
+    <h3>!ADIVINA EL POKÉMON¡</h3>
+</footer>
+<script src="../js/poke-script.js"></script>
+</body>
+</html>
