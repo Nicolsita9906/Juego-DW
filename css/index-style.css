@@ -39,19 +39,6 @@ div{
     transition: 0.5s;
 }
 
-.planetas{
-    background: #b7b7a4;
-    border-radius: 10px;
-    padding: 15px;
-    width: 250px;
-    height: 250px;
-    transition: 0.5s;
-}
-
-.planetas:hover{
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
 .disney:hover{
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
