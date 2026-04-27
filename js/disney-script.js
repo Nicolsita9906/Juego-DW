@@ -7,6 +7,7 @@ let pistas = [];
 let indicePista = 0;
 let blurNivel = 20;
 let juegoTerminado = false;
+let letrasUsadas = new Set();
 
 // ================= CATEGORÍAS (con nombres exactos de la API) =================
 const categorias = {
@@ -24,7 +25,6 @@ async function iniciarJuego() {
     let personaje = null;
 
     if (categoriaSeleccionada !== "todas") {
-        // FIX: buscar directamente por nombre en la API en vez de filtrar la página random
         let lista = categorias[categoriaSeleccionada];
         let nombreBuscado = lista[Math.floor(Math.random() * lista.length)];
 
@@ -66,6 +66,7 @@ async function iniciarJuego() {
     ];
 
     indicePista = 0;
+    letrasUsadas = new Set();
     document.getElementById("pistas-container").innerHTML = "";
     vidas = 6;
     errores = 0;
@@ -78,6 +79,24 @@ async function iniciarJuego() {
 function actualizarPantalla() {
     document.getElementById("palabra").innerText = oculta.join(" ");
     document.getElementById("vidas").innerText = "Vidas: " + vidas;
+    actualizarLetrasUsadas();
+}
+
+// ================= LETRAS USADAS =================
+function actualizarLetrasUsadas() {
+    let contenedor = document.getElementById("letras-usadas");
+    if (!contenedor) return;
+
+    if (letrasUsadas.size === 0) {
+        contenedor.innerHTML = "<span class='letras-titulo'>Letras usadas:</span> <span class='ninguna'>ninguna</span>";
+        return;
+    }
+
+    let letrasOrdenadas = [...letrasUsadas].sort();
+    contenedor.innerHTML = "<span class='letras-titulo'>Letras usadas:</span> " +
+        letrasOrdenadas.map(l =>
+            `<span class="letra-badge ${oculta.includes(l) ? 'correcta' : 'incorrecta'}">${l.toUpperCase()}</span>`
+        ).join("");
 }
 
 // ================= INTENTAR LETRA =================
@@ -85,8 +104,11 @@ function intentar() {
     let input = document.getElementById("letra");
     let letra = input.value.toLowerCase();
     input.value = "";
+    input.focus();
 
-    if (!letra) return;
+    if (!letra || letrasUsadas.has(letra)) return;
+
+    letrasUsadas.add(letra);
 
     let acierto = false;
 
@@ -134,11 +156,11 @@ function mostrarPista() {
 
 // ================= VERIFICAR FIN =================
 function verificarFin() {
-    if (!oculta.includes("_")) {
+    if (!oculta.includes("_") && palabra.length > 0) {
         juegoTerminado = true;
         document.getElementById("disney-img").style.filter = "blur(0px)";
         setTimeout(() => {
-            alert("🎉 Ganaste! Era: " + palabra);
+            alert("🎉 ¡Ganaste! Era: " + palabra);
             iniciarJuego();
         }, 100);
     }
@@ -146,11 +168,16 @@ function verificarFin() {
         juegoTerminado = true;
         document.getElementById("disney-img").style.filter = "blur(0px)";
         setTimeout(() => {
-            alert("💀 Perdiste! Era: " + palabra);
+            alert("💀 ¡Perdiste! Era: " + palabra);
             iniciarJuego();
         }, 100);
     }
 }
+
+// ================= TECLA ENTER =================
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") intentar();
+});
 
 // ================= INICIO AUTOMÁTICO =================
 iniciarJuego();

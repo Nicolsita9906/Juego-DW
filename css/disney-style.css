@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Antic&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+25&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Roboto+Condensed:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Camiseta 25', sans-serif;
     background: #f6f4d2;
 }
 
@@ -30,7 +29,7 @@ main {
 }
 
 #top-bar select {
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Camiseta 25', sans-serif;
     font-size: 1rem;
     padding: 8px 16px;
     border: 2px solid #a480cf;
@@ -214,7 +213,7 @@ main {
 }
 
 #letra {
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Camiseta 25', sans-serif;
     font-size: 1.1rem;
     padding: 8px 12px;
     width: 80px;
@@ -225,7 +224,7 @@ main {
 }
 
 button {
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Camiseta 25', sans-serif;
     font-size: 1.1rem;
     padding: 8px 20px;
     background: #a480cf;
@@ -251,4 +250,49 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 40px;
+}
+/* LETRAS USADAS */
+#letras-usadas {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+    min-height: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+}
+
+.letras-titulo {
+    font-weight: bold;
+    color: #555;
+    margin-right: 6px;
+}
+
+.ninguna {
+    color: #aaa;
+    font-style: italic;
+}
+
+.letra-badge {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.letra-badge.correcta {
+    background: #4caf50;
+    color: white;
+}
+
+.letra-badge.incorrecta {
+    background: #e57373;
+    color: white;
 }

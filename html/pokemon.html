@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>Pokémon</title>
     <link rel="stylesheet" href="../css/poke-style.css">
-
 </head>
 <body>
 
 <header>
-    <h1>Mini juegos NV</h1>
+    <h1>Mini juegos NV-AS</h1>
     <h3>!ADIVINA EL POKÉMON¡</h3>
 </header>
 <br>
@@ -21,10 +20,12 @@
 <input type="text" id="letra" maxlength="1" placeholder="Letra...">
 <button onclick="intentar()">Intentar</button>
 
-<div id="contenedor-juego">
-    <div id="pistas-container"></div>  <!-- ← agregar esto -->
+<div id="letras-usadas"></div>
 
-    <img id="pokemon-img">
+<div id="contenedor-juego">
+    <div id="pistas-container"></div>
+
+    <img id="pokemon-img" class="pokemon-img">
     <div id="horca">
         <!-- estructura de madera -->
         <div class="madera base"></div>
@@ -44,7 +45,7 @@
 <br>
 <br>
 <footer>
-    <h3>Mini juegos NV</h3>
+    <h3>Mini juegos NV-AS</h3>
     <h3>!ADIVINA EL POKÉMON¡</h3>
 </footer>
 <script src="../js/poke-script.js"></script>
